@@ -40,6 +40,7 @@ export async function POST(request: NextRequest) {
                         productId,
                         productName: product.name,
                         quantity: qty,
+                        unitPrice: product.price || 0,
                     });
                     if (product.price) {
                         totalAmount += product.price * qty;

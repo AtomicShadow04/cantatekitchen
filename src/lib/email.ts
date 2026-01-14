@@ -19,6 +19,8 @@ export const generateOrderEmailHTML = (order: Order): string => {
       <tr>
         <td style="padding: 12px; border-bottom: 1px solid #e5e7eb;">${item.productName}</td>
         <td style="padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: center;">${item.quantity}</td>
+        <td style="padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: right;">₦${item.unitPrice.toLocaleString()}</td>
+        <td style="padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: right; font-weight: 600;">₦${(item.unitPrice * item.quantity).toLocaleString()}</td>
       </tr>
     `
     )
@@ -92,12 +94,22 @@ export const generateOrderEmailHTML = (order: Order): string => {
                 <thead>
                   <tr style="background-color: #FEFAE0;">
                     <th style="padding: 12px; text-align: left; font-weight: 600; color: #2D5016;">Item</th>
-                    <th style="padding: 12px; text-align: center; font-weight: 600; color: #2D5016;">Quantity</th>
+                    <th style="padding: 12px; text-align: center; font-weight: 600; color: #2D5016;">Qty</th>
+                    <th style="padding: 12px; text-align: right; font-weight: 600; color: #2D5016;">Price</th>
+                    <th style="padding: 12px; text-align: right; font-weight: 600; color: #2D5016;">Total</th>
                   </tr>
                 </thead>
                 <tbody>
                   ${itemsHTML}
                 </tbody>
+                ${order.totalAmount ? `
+                <tfoot>
+                  <tr style="background-color: #f9fafb;">
+                    <td colspan="3" style="padding: 16px 12px; text-align: right; font-weight: 700; color: #2D5016; font-size: 16px;">Grand Total:</td>
+                    <td style="padding: 16px 12px; text-align: right; font-weight: 700; color: #E85D04; font-size: 18px;">₦${order.totalAmount.toLocaleString()}</td>
+                  </tr>
+                </tfoot>
+                ` : ''}
               </table>
             </div>
 
@@ -145,6 +157,8 @@ export const generateCustomerConfirmationHTML = (order: Order): string => {
       <tr>
         <td style="padding: 12px; border-bottom: 1px solid #e5e7eb;">${item.productName}</td>
         <td style="padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: center;">${item.quantity}</td>
+        <td style="padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: right;">₦${item.unitPrice.toLocaleString()}</td>
+        <td style="padding: 12px; border-bottom: 1px solid #e5e7eb; text-align: right; font-weight: 600;">₦${(item.unitPrice * item.quantity).toLocaleString()}</td>
       </tr>
     `
     )
@@ -182,12 +196,22 @@ export const generateCustomerConfirmationHTML = (order: Order): string => {
                 <thead>
                   <tr style="background-color: #FEFAE0;">
                     <th style="padding: 12px; text-align: left; font-weight: 600; color: #2D5016;">Item</th>
-                    <th style="padding: 12px; text-align: center; font-weight: 600; color: #2D5016;">Quantity</th>
+                    <th style="padding: 12px; text-align: center; font-weight: 600; color: #2D5016;">Qty</th>
+                    <th style="padding: 12px; text-align: right; font-weight: 600; color: #2D5016;">Price</th>
+                    <th style="padding: 12px; text-align: right; font-weight: 600; color: #2D5016;">Total</th>
                   </tr>
                 </thead>
                 <tbody>
                   ${itemsHTML}
                 </tbody>
+                ${order.totalAmount ? `
+                <tfoot>
+                  <tr style="background-color: #f9fafb;">
+                    <td colspan="3" style="padding: 16px 12px; text-align: right; font-weight: 700; color: #2D5016; font-size: 16px;">Grand Total:</td>
+                    <td style="padding: 16px 12px; text-align: right; font-weight: 700; color: #E85D04; font-size: 18px;">₦${order.totalAmount.toLocaleString()}</td>
+                  </tr>
+                </tfoot>
+                ` : ''}
               </table>
             </div>
 
