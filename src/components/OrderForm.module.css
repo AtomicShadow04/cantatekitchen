@@ -1,0 +1,240 @@
+.form {
+    margin-bottom: var(--space-4xl);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.section {
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    height: fit-content;
+}
+
+.sectionTitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid rgba(45, 80, 22, 0.1);
+}
+
+.sectionError {
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    background: rgba(220, 47, 2, 0.1);
+    border-radius: var(--radius-md);
+}
+
+/* Menu List Items */
+.menuList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border: 1px solid var(--color-secondary-dark);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.menuItem:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(45, 80, 22, 0.02);
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemName {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+}
+
+.itemPrice {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--color-secondary);
+    padding: var(--space-xs);
+    border-radius: var(--radius-full);
+}
+
+.qtyBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    font-size: var(--font-size-xs);
+    transition: all var(--transition-fast);
+}
+
+.qtyBtn:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: white;
+}
+
+.qtyBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #e5e5e5;
+    color: #a0a0a0;
+}
+
+.qtyDisplay {
+    font-weight: var(--font-weight-bold);
+    min-width: 20px;
+    text-align: center;
+}
+
+.unavailableText {
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.orderTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-lg);
+    border-top: 2px dashed var(--color-secondary-dark);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.totalValue {
+    color: var(--color-primary);
+    font-size: var(--font-size-2xl);
+}
+
+/* Submit Section */
+.submitContainer {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.submitBtn {
+    min-width: 250px;
+    margin-bottom: var(--space-md);
+}
+
+.securityNote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.smallIcon {
+    color: var(--color-success);
+}
+
+/* Success State */
+.successContainer {
+    text-align: center;
+    padding: var(--space-4xl) var(--space-xl);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.iconWrapper {
+    font-size: var(--font-size-6xl);
+    color: var(--color-success);
+    margin-bottom: var(--space-lg);
+}
+
+.successContainer h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+.successContainer p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+}
+
+/* Error Banner */
+.errorBanner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(220, 47, 2, 0.1);
+    border: 1px solid rgba(220, 47, 2, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--color-error);
+    margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.radioGroup {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.radioInput {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--color-primary);
+}
+
+.infoText {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.inlineIcon {
+    font-size: 1rem;
+}
