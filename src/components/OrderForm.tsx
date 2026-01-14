@@ -54,6 +54,21 @@ export default function OrderForm() {
         });
     };
 
+    const handleManualQuantityChange = (productId: string, value: string) => {
+        const newQty = parseInt(value, 10);
+        if (!isNaN(newQty) && newQty >= 0) {
+            setValue(`items.${productId}` as any, newQty, {
+                shouldValidate: true,
+                shouldDirty: true
+            });
+        } else if (value === '') {
+            setValue(`items.${productId}` as any, 0, {
+                shouldValidate: true,
+                shouldDirty: true
+            });
+        }
+    };
+
     const onSubmit = async (data: OrderFormData) => {
         setIsSubmitting(true);
         setSubmitStatus('idle');
@@ -235,9 +250,13 @@ export default function OrderForm() {
                                         >
                                             <FaMinus />
                                         </button>
-                                        <span className={styles.qtyDisplay}>
-                                            {(watchItems as Record<string, number>)?.[product.id] || 0}
-                                        </span>
+                                        <input
+                                            type="number"
+                                            min="0"
+                                            value={(watchItems as Record<string, number>)?.[product.id] || 0}
+                                            onChange={(e) => handleManualQuantityChange(product.id, e.target.value)}
+                                            className={styles.qtyInput}
+                                        />
                                         <button
                                             type="button"
                                             onClick={() => handleQuantityChange(product.id, 1)}
