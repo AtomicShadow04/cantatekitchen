@@ -15,7 +15,7 @@ export const products: Product[] = [
         name: 'Moimoi with Fish',
         description: 'Our signature moimoi enriched with tender pieces of fresh fish.',
         price: 800,
-        image: '/images/moimoi-fish.jpg',
+        image: '/images/moimoi-fish.png',
         category: 'main',
         available: true,
     },
