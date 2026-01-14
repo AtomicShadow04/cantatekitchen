@@ -278,3 +278,49 @@
     margin-top: 0.2rem;
     flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+    .form {
+        padding: 1.25rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .orderTotal {
+        font-size: 1.1rem;
+    }
+
+    .totalValue {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menuItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .itemInfo {
+        width: 100%;
+    }
+
+    .quantityControls {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .qtyInput {
+        flex: 1;
+    }
+
+    .radioGroup {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

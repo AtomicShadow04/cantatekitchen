@@ -182,3 +182,13 @@
         padding: var(--space-sm) var(--space-md);
     }
 }
+
+@media (max-width: 480px) {
+    .floatingCard {
+        display: none;
+    }
+
+    .hero {
+        padding: var(--space-3xl) 0;
+    }
+}

@@ -24,6 +24,11 @@ export default function Header() {
                     <span className={styles.logoText}>Cantate Kitchen</span>
                 </Link>
 
+                <div
+                    className={`${styles.mobileBackdrop} ${isMenuOpen ? styles.backdropOpen : ''}`}
+                    onClick={closeMenu}
+                />
+
                 <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
                     <Link href="/" className={styles.navLink} onClick={closeMenu}>
                         Home

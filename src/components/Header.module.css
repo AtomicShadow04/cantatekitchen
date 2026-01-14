@@ -132,4 +132,33 @@
         margin-left: 0;
         width: 100%;
     }
+
+    .mobileBackdrop {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity var(--transition-base);
+    }
+
+    .backdropOpen {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoIcon {
+        font-size: var(--font-size-2xl);
+    }
+
+    .logo {
+        font-size: var(--font-size-lg);
+    }
 }

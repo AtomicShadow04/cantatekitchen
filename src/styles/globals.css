@@ -511,12 +511,16 @@ a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   :root {
-    --font-size-5xl: 2.25rem;
-    /* 36px */
-    --font-size-4xl: 1.875rem;
-    /* 30px */
+    --font-size-6xl: 2.5rem;
+    --font-size-5xl: 2rem;
+    --font-size-4xl: 1.75rem;
     --font-size-3xl: 1.5rem;
-    /* 24px */
+    --font-size-2xl: 1.25rem;
+    --font-size-xl: 1.125rem;
+
+    --space-4xl: 3rem;
+    --space-3xl: 2.5rem;
+    --space-2xl: 2rem;
   }
 
   .container {

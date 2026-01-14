@@ -188,3 +188,34 @@
         gap: var(--space-xs);
     }
 }
+
+@media (max-width: 480px) {
+    .footer {
+        padding: var(--space-2xl) 0 var(--space-lg);
+    }
+
+    .footerLogo {
+        font-size: var(--font-size-xl);
+    }
+
+    .logoIcon {
+        font-size: var(--font-size-2xl);
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+
+    .footerSection {
+        text-align: center;
+    }
+
+    .contactInfo li {
+        justify-content: center;
+    }
+
+    .businessHours li {
+        align-items: center;
+        text-align: center;
+    }
+}
